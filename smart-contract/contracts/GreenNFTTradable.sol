@@ -7,7 +7,7 @@ import { GreenNFTData } from "./GreenNFTData.sol";
 import { CarbonCreditToken } from "./CarbonCreditToken.sol";
 
 /// [Note]: For calling enum
-import { GreenNFTDataCommons } from "./GreenNFTDataCommons.sol";
+import { GreenNFTDataCommons } from "./commons/GreenNFTDataCommons.sol";
 
 
 /**

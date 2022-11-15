@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 import { SafeMath } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
-import { GreenNFTDataCommons } from "./GreenNFTDataCommons.sol";
+import { GreenNFTDataCommons } from "./commons/GreenNFTDataCommons.sol";
 import { GreenNFT } from "./GreenNFT.sol";
 
 
