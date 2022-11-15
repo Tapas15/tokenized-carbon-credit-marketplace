@@ -1,8 +1,9 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import { SafeMath } from "@openzeppelin/contracts/math/SafeMath.sol";
-import { GreenNFTMarketplaceCommons } from "./commons/GreenNFTMarketplaceCommons.sol";
+import { SafeMath } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import { GreenNFTMarketplaceCommons } from "./GreenNFTMarketplaceCommons.sol";
 import { GreenNFT } from "./GreenNFT.sol";
 import { GreenNFTTradable } from "./GreenNFTTradable.sol";
 import { GreenNFTData } from "./GreenNFTData.sol";
@@ -23,7 +24,7 @@ contract GreenNFTMarketplace is GreenNFTTradable, GreenNFTMarketplaceCommons {
         greenNFTData = _greenNFTData;
         carbonCreditToken = _carbonCreditToken;
 
-        address payable GREEN_NFT_MARKETPLACE = address(uint160(address(this)));
+        address  GREEN_NFT_MARKETPLACE = address(uint160(address(this)));
     }
 
     /** 
@@ -41,14 +42,14 @@ contract GreenNFTMarketplace is GreenNFTTradable, GreenNFTMarketplaceCommons {
         GreenNFTData.GreenNFTMetadata memory greenNFTMetadata = greenNFTData.getGreenNFTMetadataByNFTAddress(greenNFT);
         uint _projectId = greenNFTData.getClaim(greenNFTMetadata.claimId).projectId;
         address _seller = greenNFTData.getProject(_projectId).projectOwner;
-        address payable seller = address(uint160(_seller));  /// Convert owner address with payable
+        address seller = address(uint160(_seller));  /// Convert owner address with payable
         
         /// Calculation of purchase amount (Unit price * buyable carbon credits) 
         uint purchaseAmountOfCarbonCredits = getPurchaseAmountOfCarbonCredits(greenNFT, orderOfCarbonCredits);
         require(purchaseAmountOfCarbonCredits == msg.value, "Purchase amount of carbon credits must be equal to msg.value");
 
         /// ETH amount purchased is transferred from a buyer's wallet a projectOwner's (seller's) wallet
-        seller.transfer(purchaseAmountOfCarbonCredits);
+        payable(seller).transfer(purchaseAmountOfCarbonCredits);
 
         /// CCTs (Carbon Credit Tokens) are transferred into the buyer's wallet address
         carbonCreditToken.transfer(buyer, purchaseAmountOfCarbonCredits);

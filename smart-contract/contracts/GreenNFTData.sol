@@ -1,8 +1,9 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import { SafeMath } from "@openzeppelin/contracts/math/SafeMath.sol";
-import { GreenNFTDataCommons } from "./commons/GreenNFTDataCommons.sol";
+import { SafeMath } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import { GreenNFTDataCommons } from "./GreenNFTDataCommons.sol";
 import { GreenNFT } from "./GreenNFT.sol";
 
 
@@ -91,7 +92,7 @@ contract GreenNFTData is GreenNFTDataCommons {
             greenNFT: _greenNFT,
             projectOwner: _projectOwner,
             auditor: _auditor,
-            timestampOfissuedDate: now,
+            timestampOfissuedDate: block.timestamp,
             startOfPeriod: _startOfPeriod,
             endOfPeriod: _endOfPeriod,
             auditedReport: _auditedReport,

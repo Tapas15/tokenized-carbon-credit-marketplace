@@ -1,11 +1,12 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
-import { SafeMath } from "@openzeppelin/contracts/math/SafeMath.sol";
-import { Strings } from "./libraries/Strings.sol";
+import { Ownable } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import { SafeMath } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import { Strings } from "./Strings.sol";
 
-import { GreenNFTFactoryCommons } from "./commons/GreenNFTFactoryCommons.sol";
+import { GreenNFTFactoryCommons } from "./GreenNFTFactoryCommons.sol";
 import { GreenNFT } from "./GreenNFT.sol";
 import { GreenNFTMarketplace } from "./GreenNFTMarketplace.sol";
 import { GreenNFTData } from "./GreenNFTData.sol";

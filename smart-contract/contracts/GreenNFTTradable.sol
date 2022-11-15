@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 import { GreenNFT } from "./GreenNFT.sol";
@@ -6,7 +7,7 @@ import { GreenNFTData } from "./GreenNFTData.sol";
 import { CarbonCreditToken } from "./CarbonCreditToken.sol";
 
 /// [Note]: For calling enum
-import { GreenNFTDataCommons } from "./commons/GreenNFTDataCommons.sol";
+import { GreenNFTDataCommons } from "./GreenNFTDataCommons.sol";
 
 
 /**

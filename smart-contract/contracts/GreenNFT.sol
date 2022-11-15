@@ -1,14 +1,15 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import { SafeMath } from "@openzeppelin/contracts/math/SafeMath.sol";
-
+import { ERC721 } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+import { SafeMath } from "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 /**
  * @notice - This is the NFT contract for a green
  */
-contract GreenNFT is ERC721 {
+contract GreenNFT is  ERC721URIStorage {
     using SafeMath for uint256;
 
     uint256 public currentTokenId;

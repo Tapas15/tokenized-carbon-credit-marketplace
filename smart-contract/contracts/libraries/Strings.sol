@@ -1,5 +1,5 @@
-pragma solidity 0.6.12;
-
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 library Strings {
     // via https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI_0.5.sol
     function strConcat(string memory _a, string memory _b, string memory _c, string memory _d, string memory _e) internal pure returns (string memory) {
@@ -44,7 +44,7 @@ library Strings {
         bytes memory bstr = new bytes(len);
         uint k = len - 1;
         while (_i != 0) {
-            bstr[k--] = byte(uint8(48 + _i % 10));
+            bstr[k--] = bytes1(uint8(48 + _i % 10));
             _i /= 10;
         }
         return string(bstr);
